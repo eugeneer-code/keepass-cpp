@@ -22,9 +22,9 @@
 #include <string>
 #include <vector>
 
-#include "binary.hh"
-#include "icon.hh"
-#include "temporal.hh"
+#include "binary.h"
+#include "icon.h"
+#include "temporal.h"
 
 namespace keepass {
 

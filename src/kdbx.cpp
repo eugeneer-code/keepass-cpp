@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "kdbx.hh"
+#include "kdbx.h"
 
 #include <algorithm>
 #include <cassert>
@@ -29,20 +29,20 @@
 
 #include <openssl/sha.h>
 
-#include "base64.hh"
-#include "cipher.hh"
-#include "exception.hh"
-#include "format.hh"
-#include "icon.hh"
-#include "io.hh"
-#include "iterator.hh"
-#include "key.hh"
-#include "metadata.hh"
-#include "pugixml.hh"
-#include "random.hh"
-#include "security.hh"
-#include "stream.hh"
-#include "util.hh"
+#include "base64.h"
+#include "cipher.h"
+#include "exception.h"
+#include "format.h"
+#include "icon.h"
+#include "io.h"
+#include "iterator.h"
+#include "key.h"
+#include "metadata.h"
+#include "pugixml.h"
+#include "random.h"
+#include "security.h"
+#include "stream.h"
+#include "util.h"
 
 namespace keepass {
 

@@ -16,15 +16,15 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "cipher.hh"
+#include "cipher.h"
 
 #include <algorithm>
 #include <cassert>
 #include <cstring>
 
-#include "exception.hh"
-#include "stream.hh"
-#include "util.hh"
+#include "exception.h"
+#include "stream.h"
+#include "util.h"
 
 namespace {
 

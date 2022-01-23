@@ -17,7 +17,7 @@
  */
 
 #pragma once
-#include "cipher.hh"
+#include "cipher.h"
 
 #include <memory>
 #include <random>

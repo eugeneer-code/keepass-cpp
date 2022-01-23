@@ -21,7 +21,7 @@
 #include <string>
 #include <locale>
 
-#include "exception.hh"
+#include "exception.h"
 
 namespace keepass {
 

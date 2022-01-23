@@ -16,11 +16,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "entry.hh"
+#include "entry.h"
 
 #include <sstream>
 
-#include "util.hh"
+#include "util.h"
 
 namespace keepass {
 

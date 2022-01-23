@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "key.hh"
+#include "key.h"
 
 #include <algorithm>
 #include <fstream>
@@ -24,10 +24,10 @@
 
 #include <openssl/sha.h>
 
-#include "base64.hh"
-#include "cipher.hh"
-#include "exception.hh"
-#include "pugixml.hh"
+#include "base64.h"
+#include "cipher.h"
+#include "exception.h"
+#include "pugixml.h"
 
 namespace keepass {
 

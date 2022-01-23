@@ -23,8 +23,8 @@
 #include <string>
 #include <unordered_map>
 
-#include "database.hh"
-#include "security.hh"
+#include "database.h"
+#include "security.h"
 
 namespace pugi {
   class xml_document;

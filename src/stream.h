@@ -27,7 +27,7 @@
 
 #include <zlib.h>
 
-#include "util.hh"
+#include "util.h"
 
 namespace keepass {
 

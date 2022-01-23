@@ -21,7 +21,7 @@
 #include <memory>
 #include <vector>
 
-#include "entry.hh"
+#include "entry.h"
 
 namespace keepass {
 

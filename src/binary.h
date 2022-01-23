@@ -17,36 +17,36 @@
  */
 
 #pragma once
-#include <cstdint>
-#include <memory>
 #include <string>
 
-#include "database.hh"
+#include "security.h"
 
 namespace keepass {
 
-class Entry;
-class Group;
-class Key;
-
-/**
- * @brief Keepass database file representation.
- */
-class KdbFile final {
+class Binary final {
  private:
-  std::shared_ptr<Group> ReadGroup(std::istream& src, uint32_t& id,
-                                   uint16_t& level) const;
-  void WriteGroup(std::ostream& dst, std::shared_ptr<Group> group,
-                  uint32_t group_id, uint16_t level) const;
-
-  std::shared_ptr<Entry> ReadEntry(std::istream& src,
-                                   uint32_t& group_id) const;
-  void WriteEntry(std::ostream& dst, std::shared_ptr<Entry> entry,
-                  uint32_t group_id) const;
+  protect<std::string> data_;
+  bool compress_ = false;
 
  public:
-  std::unique_ptr<Database> Import(const std::string& path, const Key& key);
-  void Export(const std::string& path, const Database& db, const Key& key);
+  Binary(const protect<std::string>& data) :
+      data_(data) {}
+
+  bool Empty() const { return data_->empty(); }
+  std::size_t Size() const { return data_->size(); }
+
+  const protect<std::string>& data() const { return data_; }
+  void set_data(const protect<std::string>& data) { data_ = data; }
+
+  bool compress() const { return compress_; }
+  void set_compress(bool compress) { compress_ = compress; }
+
+  bool operator==(const Binary& other) const {
+    return data_ == other.data_;
+  }
+  bool operator!=(const Binary& other) const {
+    return !(*this == other);
+  }
 };
 
 }   // namespace keepass

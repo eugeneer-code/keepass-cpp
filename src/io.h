@@ -23,7 +23,7 @@
 #include <string>
 #include <vector>
 
-#include "exception.hh"
+#include "exception.h"
 
 namespace keepass {
 

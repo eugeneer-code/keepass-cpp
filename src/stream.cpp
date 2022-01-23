@@ -16,14 +16,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "stream.hh"
+#include "stream.h"
 
 #include <cassert>
 
 #include <openssl/sha.h>
 
-#include "exception.hh"
-#include "format.hh"
+#include "exception.h"
+#include "format.h"
 
 namespace keepass {
 

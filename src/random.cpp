@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "random.hh"
+#include "random.h"
 
 namespace keepass {
 

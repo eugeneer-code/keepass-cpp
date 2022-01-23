@@ -21,7 +21,7 @@
 #include <memory>
 #include <vector>
 
-#include "group.hh"
+#include "group.h"
 
 namespace keepass {
 

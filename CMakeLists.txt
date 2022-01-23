@@ -5,48 +5,50 @@ set(TARGET_NAME keepasscpp)
 include_directories(src)
 
 list(APPEND HEADERS
-	src/base64.hh
-	src/binary.hh
-	src/cipher.hh
-	src/database.hh
-	src/entry.hh
-	src/exception.hh
-	src/format.hh
-	src/group.hh
-	src/icon.hh
-	src/io.hh
-	src/iterator.hh
-	src/kdb.hh
-	src/kdbx.hh
-	src/key.hh
-	src/metadata.hh
-	src/pugiconfig.hh
-	src/pugixml.hh
-	src/random.hh
-	src/security.hh
-	src/stream.hh
-	src/temporal.hh
-	src/util.hh
+	src/base64.h
+	src/binary.h
+	src/cipher.h
+	src/database.h
+	src/entry.h
+	src/exception.h
+	src/format.h
+	src/group.h
+	src/icon.h
+	src/io.h
+	src/iterator.h
+	src/kdb.h
+	src/kdbx.h
+	src/key.h
+	src/metadata.h
+	src/pugiconfig.h
+	src/pugixml.h
+	src/random.h
+	src/security.h
+	src/stream.h
+	src/temporal.h
+	src/util.h
 )
 
 list(APPEND SOURCES
-	src/cipher.cc
-	src/entry.cc
-	src/group.cc
-	src/io.cc
-	src/kdb.cc
-	src/kdbx.cc
-	src/key.cc
-	src/metadata.cc
-	src/pugixml.cc
-	src/random.cc
-	src/stream.cc
-	src/util.cc
+	src/cipher.cpp
+	src/entry.cpp
+	src/group.cpp
+	src/io.cpp
+	src/kdb.cpp
+	src/kdbx.cpp
+	src/key.cpp
+	src/metadata.cpp
+	src/pugixml.cpp
+	src/random.cpp
+	src/stream.cpp
+	src/util.cpp
 )
 
 add_library(${TARGET_NAME} ${HEADERS} ${SOURCES})
 
 find_package(OpenSSL REQUIRED)
 include_directories(${OPENSSL_INCLUDE_DIR})
-target_link_libraries(${TARGET_NAME} OpenSSL::SSL OpenSSL::Crypto)
+target_link_libraries(${TARGET_NAME} OpenSSL::SSL OpenSSL::Crypto ZLIB::ZLIB)
 
+find_package(ZLIB REQUIRED)
+include_directories(${ZLIB_INCLUDE_DIR})
