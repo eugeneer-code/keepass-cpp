@@ -692,7 +692,7 @@ void KdbFile::Export(const std::string& path, const Database& db,
 
     WriteGroup(content, group, num_groups, static_cast<uint16_t>(level));
 
-    if (num_groups == std::numeric_limits<decltype(num_groups)>::max()) {
+    if (num_groups == std::numeric_limits<uint32_t>::max()) {
       assert(false);
       throw InternalError("Group count exceeds KDB maximum.");
     }
@@ -706,7 +706,7 @@ void KdbFile::Export(const std::string& path, const Database& db,
     for (const auto& entry : group->Entries()) {
       WriteEntry(content, entry, num_groups);
 
-      if (num_entries == std::numeric_limits<decltype(num_entries)>::max()) {
+      if (num_entries == std::numeric_limits<uint32_t>::max()) {
         assert(false);
         throw InternalError("Entry count exceeds KDB maximum.");
       }

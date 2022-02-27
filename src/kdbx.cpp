@@ -958,7 +958,6 @@ std::unique_ptr<Database> KdbxFile::Import(const std::string& path,
   bool done = false;
   while (!done && src.good()) {
     KdbxHeaderField header_field = consume<KdbxHeaderField>(src);
-
     // Read the header field into a separate buffer before parsing. This is to
     // guard against reading outside the field as well as for making sure to
     // read the complete field regardless of how much of it that we parse.

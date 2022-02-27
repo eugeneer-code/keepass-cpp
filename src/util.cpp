@@ -85,7 +85,7 @@ std::array<uint8_t, 16> generate_uuid() {
   std::random_device rd;
   std::mt19937 engine(rd());
 
-  std::uniform_int_distribution<uint8_t> uniform_dist(0, 255);
+  std::uniform_int_distribution<unsigned int> uniform_dist(0, 255);
 
   // Fill block with random values.
   std::array<uint8_t, 16> uuid;
