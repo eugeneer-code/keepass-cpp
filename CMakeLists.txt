@@ -50,9 +50,6 @@ find_package(OpenSSL REQUIRED)
 include_directories(${OPENSSL_INCLUDE_DIR})
 target_link_libraries(${TARGET_NAME} OpenSSL::SSL OpenSSL::Crypto ZLIB::ZLIB)
 
-add_executable(test src/main.cpp)
-target_link_libraries(test ${TARGET_NAME})
-
 find_package(ZLIB REQUIRED)
 include_directories(${ZLIB_INCLUDE_DIR})
 
@@ -64,7 +61,9 @@ set(OPENSSL_USE_STATIC_LIBS TRUE)
 message("ZLIB LIB: ${ZLIB_LIBRARY}")
 message("OPENSSL LIB: ${OPENSSL_SSL_LIBRARY} ${OPENSSL_CRYPTO_LIBRARY}")
 
-#add_custom_command(TARGET test POST_BUILD
-#		COMMAND ${CMAKE_COMMAND} -E copy_if_different
-#		"${ZLIB_LIBRARY}"
-#		$<TARGET_FILE_DIR:test>)
+option(KEEPASS_BUILD_EXAMPLE OFF)
+
+if(KEEPASS_BUILD_EXAMPLE)
+	add_executable(test src/main.cpp)
+	target_link_libraries(test ${TARGET_NAME})
+endif()
